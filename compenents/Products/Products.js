@@ -7,7 +7,6 @@ class Products {
 
   handleSetLocationStorage(element, id) {
     const { isPushProduct, products } = localStorageUtil.putProducts(id);
-    console.log(isPushProduct);
     if (isPushProduct) {
       element.classList.add(this.classNameActive);
       element.innerHTML = this.labelRemove;
