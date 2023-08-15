@@ -9,14 +9,14 @@ spinnerPage.render();
 
 let CATALOG = [];
 
-// https://api.myjson.com/bins/esicc
 fetch("server/catalog.json")
   .then((res) => res.json())
   .then((body) => {
-    spinnerPage.handleClear();
     CATALOG = body;
     render();
+    spinnerPage.handleClear();
   })
-  .catch((error) => {
-    console.log(error);
+  .catch(() => {
+    spinnerPage.handleClear();
+    errorPage.render();
   });
